@@ -26,11 +26,11 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static DateTime ToDateTime(this string helper)
+    public static partial class String
     {
-      return DateTime.Parse(helper);
+        public static DateTime ToDateTime(this string helper)
+        {
+            return DateTime.Parse(helper);
+        }
     }
-  }
 }

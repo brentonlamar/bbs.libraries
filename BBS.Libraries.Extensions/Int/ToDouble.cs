@@ -26,11 +26,11 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Int
-  {
-    public static Double ToDouble(this int helper)
+    public static partial class Int
     {
-      return Convert.ToDouble(helper);
+        public static Double ToDouble(this int helper)
+        {
+            return Convert.ToDouble(helper);
+        }
     }
-  }
 }

@@ -26,12 +26,12 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static string ToBase64String(this string helper)
+    public static partial class String
     {
-      var byteArray = helper.ToByteArray();
-      return Convert.ToBase64String(byteArray);
+        public static string ToBase64String(this string helper)
+        {
+            var byteArray = helper.ToByteArray();
+            return Convert.ToBase64String(byteArray);
+        }
     }
-  }
 }

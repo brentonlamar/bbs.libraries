@@ -26,13 +26,13 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static int? ToIntNullable(this string input)
+    public static partial class String
     {
-      return (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)
-                  ? (int?)null
-                  : Convert.ToInt32(input));
+        public static int? ToIntNullable(this string input)
+        {
+            return (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)
+                ? (int?) null
+                : Convert.ToInt32(input));
+        }
     }
-  }
 }
