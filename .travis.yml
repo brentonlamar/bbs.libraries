@@ -7,6 +7,8 @@ script:
   - xbuild /p:Configuration=Release BBS.Libraries.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./UnitTests/BBS.Libraries.UnitTests.General/bin/Release/BBS.Libraries.UnitTests.General.dll
   
+  -- nuget update --self
+
   - nuget pack BBS.Libraries.Contracts\BBS.Libraries.Contracts.csproj
   - nuget push BBS.Libraries.Contracts.1.0.0.0.nupkg -ApiKey $NUGET_API_KEY -Source http://nuget-betabytesoftware.azurewebsites.net/
 
