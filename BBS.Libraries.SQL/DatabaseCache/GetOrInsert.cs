@@ -23,10 +23,6 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.SQL
 {
@@ -45,7 +41,7 @@ namespace BBS.Libraries.SQL
                 return Items[cacheId].Item;
             }
 
-            Items.Add(cacheId, new DatabaseCacheItem<T>()
+            Items.Add(cacheId, new DatabaseCacheItem<T>
             {
                 InsertedIntoCacheDateTime = DateTime.UtcNow,
                 Item = queryToRun.Invoke()
