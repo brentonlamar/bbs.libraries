@@ -22,10 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
-using System.Net.Mail;
-using System.Runtime.Serialization;
 using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails
@@ -34,7 +31,7 @@ namespace BBS.Libraries.Emails
     {
         public void Add(System.Net.Mail.AlternateView alternate)
         {
-            base.Add(new MailMessageAlternateView()
+            base.Add(new MailMessageAlternateView
             {
                 Content = alternate.ContentStream.ToByteArray(),
                 ContentType = alternate.ContentType.MediaType
