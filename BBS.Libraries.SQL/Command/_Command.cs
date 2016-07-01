@@ -38,7 +38,6 @@ namespace BBS.Libraries.SQL
         public string Database => Connection.Database;
         public int PacketSize => Connection.PacketSize;
         public string ServerVersion => Connection.ServerVersion;
-        public Guid ClientConnectionId => Connection.ClientConnectionId;
         public int ConnectionTimeout => Connection.ConnectionTimeout;
         public string WorkstationId => Connection.WorkstationId;
         public ConnectionState ConnectionState => Connection.State;
