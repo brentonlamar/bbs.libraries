@@ -37,9 +37,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
-		Add_MIT_Liscencse.ps1 = Add_MIT_Liscencse.ps1
 		LICENSE = LICENSE
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{CE163B92-29FE-494E-A534-EFC7BA97E967}"
+	ProjectSection(SolutionItems) = preProject
+		BBS.Libraries.Contracts\bbs.libraries.contracts.csproj.nuspec = BBS.Libraries.Contracts\bbs.libraries.contracts.csproj.nuspec
+		BBS.Libraries.Emails\bbs.libraries.emails.csproj.nuspec = BBS.Libraries.Emails\bbs.libraries.emails.csproj.nuspec
+		BBS.Libraries.Enums\bbs.libraries.enums.csproj.nuspec = BBS.Libraries.Enums\bbs.libraries.enums.csproj.nuspec
+		BBS.Libraries.Extensions\bbs.libraries.extensions.csproj.nuspec = BBS.Libraries.Extensions\bbs.libraries.extensions.csproj.nuspec
+		BBS.Libraries.IO\bbs.libraries.io.csproj.nuspec = BBS.Libraries.IO\bbs.libraries.io.csproj.nuspec
+		BBS.Libraries.Logging.AppInsights\bbs.libraries.logging.appinsights.csproj.nuspec = BBS.Libraries.Logging.AppInsights\bbs.libraries.logging.appinsights.csproj.nuspec
+		BBS.Libraries.Logging\bbs.libraries.logging.csproj.nuspec = BBS.Libraries.Logging\bbs.libraries.logging.csproj.nuspec
+		BBS.Libraries.SQL\bbs.libraries.sql.csproj.nuspec = BBS.Libraries.SQL\bbs.libraries.sql.csproj.nuspec
+		BBS.Libraries.Templating\bbs.libraries.templating.csproj.nuspec = BBS.Libraries.Templating\bbs.libraries.templating.csproj.nuspec
+		BBS.Libraries.Templating.Handlebars\bbs.libraries.templating.handlebars.csproj.nuspec = BBS.Libraries.Templating.Handlebars\bbs.libraries.templating.handlebars.csproj.nuspec
+		BBS.Libraries.Templating.Razor\bbs.libraries.templating.razor.csproj.nuspec = BBS.Libraries.Templating.Razor\bbs.libraries.templating.razor.csproj.nuspec
 	EndProjectSection
 EndProject
 Global
