@@ -26,19 +26,19 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public partial class String
-  {
-    public static Guid? ToGuidNullable(this string value)
+    public partial class String
     {
-      Guid outputGuid;
-      if (string.IsNullOrWhiteSpace(value) || ! Guid.TryParse(value, out outputGuid))
-      {
-        return null;
-      }
-      else
-      {
-        return outputGuid;
-      }
+        public static Guid? ToGuidNullable(this string value)
+        {
+            Guid outputGuid;
+            if (string.IsNullOrWhiteSpace(value) || !Guid.TryParse(value, out outputGuid))
+            {
+                return null;
+            }
+            else
+            {
+                return outputGuid;
+            }
+        }
     }
-  }
 }

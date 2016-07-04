@@ -26,13 +26,13 @@ using System;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static DateTime? ToDateTimeNullable(this string input)
+    public static partial class String
     {
-      return (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)
-                  ? (DateTime?)null
-                  : DateTime.Parse(input));
+        public static DateTime? ToDateTimeNullable(this string input)
+        {
+            return (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)
+                ? (DateTime?) null
+                : DateTime.Parse(input));
+        }
     }
-  }
 }

@@ -27,16 +27,16 @@ using System.Collections.Generic;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static byte[] ToByteArray(this string helper)
+    public static partial class String
     {
-      var output = new List<byte>();
-      foreach (var character in helper)
-      {
-        output.Add(Convert.ToByte(character));
-      }
-      return output.ToArray();
+        public static byte[] ToByteArray(this string helper)
+        {
+            var output = new List<byte>();
+            foreach (var character in helper)
+            {
+                output.Add(Convert.ToByte(character));
+            }
+            return output.ToArray();
+        }
     }
-  }
 }
