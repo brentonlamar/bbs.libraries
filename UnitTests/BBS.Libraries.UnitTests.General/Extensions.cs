@@ -23,6 +23,7 @@
 //-----------------------------------------------------------------------
 using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using BBS.Libraries.Extensions;
 using NUnit.Framework;
 
@@ -118,12 +119,12 @@ namespace BBS.Libraries.UnitTests.General
             var trueValues = new[] { 0, 4, 98 };
 
             // ACT
-            var firstTrue = 4.ToBoolean(trueValues, defaultReturn:true);
-            var secondTrue = 0.ToBoolean(trueValues, defaultReturn: true);
-            var thirdTrue = 98.ToBoolean(trueValues, defaultReturn: true);
+            var firstTrue = 4.ToBoolean(trueValues, @default:true);
+            var secondTrue = 0.ToBoolean(trueValues, @default: true);
+            var thirdTrue = 98.ToBoolean(trueValues, @default: true);
 
-            var firstFalse = 1.ToBoolean(trueValues, defaultReturn: true);
-            var secondFalse = 99.ToBoolean(trueValues, defaultReturn: true);
+            var firstFalse = 1.ToBoolean(trueValues, @default: true);
+            var secondFalse = 99.ToBoolean(trueValues, @default: true);
 
             // Assert
 
@@ -166,12 +167,12 @@ namespace BBS.Libraries.UnitTests.General
             var falseValues = new[] { 0, 4, 98 };
 
             // ACT
-            var firstTrue = 4.ToBoolean(falseValues: falseValues, defaultReturn: true);
-            var secondTrue = 0.ToBoolean(falseValues: falseValues, defaultReturn: true);
-            var thirdTrue = 98.ToBoolean(falseValues: falseValues, defaultReturn: true);
+            var firstTrue = 4.ToBoolean(falseValues: falseValues, @default: true);
+            var secondTrue = 0.ToBoolean(falseValues: falseValues, @default: true);
+            var thirdTrue = 98.ToBoolean(falseValues: falseValues, @default: true);
 
-            var firstFalse = 1.ToBoolean(falseValues: falseValues, defaultReturn: true);
-            var secondFalse = 99.ToBoolean(falseValues: falseValues, defaultReturn: true);
+            var firstFalse = 1.ToBoolean(falseValues: falseValues, @default: true);
+            var secondFalse = 99.ToBoolean(falseValues: falseValues, @default: true);
 
             // Assert
 
@@ -189,12 +190,12 @@ namespace BBS.Libraries.UnitTests.General
             // Arrange
 
             // ACT
-            var firstTrue = 4.ToBoolean(defaultReturn: true);
-            var secondTrue = 0.ToBoolean(defaultReturn: true);
-            var thirdTrue = 98.ToBoolean(defaultReturn: true);
+            var firstTrue = 4.ToBoolean(@default: true);
+            var secondTrue = 0.ToBoolean(@default: true);
+            var thirdTrue = 98.ToBoolean(@default: true);
 
-            var firstFalse = 1.ToBoolean(defaultReturn: false);
-            var secondFalse = 99.ToBoolean(defaultReturn: false);
+            var firstFalse = 1.ToBoolean(@default: false);
+            var secondFalse = 99.ToBoolean(@default: false);
 
             // Assert
 
@@ -283,7 +284,170 @@ namespace BBS.Libraries.UnitTests.General
             Assert.That(convertedObject.Name, Is.EqualTo("Brenton Lamar"));
         }
 
-        
+        [Test]
+        public void String_ToBase64String_Converts_Correctly()
+        {
+            // Arrange
+            var stringToConvert = "This is a test string";
+            var expectedResult = "VGhpcyBpcyBhIHRlc3Qgc3RyaW5n";
+            // Act
+            var @string = stringToConvert.ToBase64String();
+
+            // Assert
+            Assert.That(@string, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void String_ToBoolean_Converts_Correctly()
+        {
+            // Arrange
+            var trueString = "TruE";
+            var falseString = "False";
+            var trueChar = 'T'.ToString();
+            var falseChar = 'F'.ToString();
+            var oneString = 1.ToString();
+            var zeroString = 0.ToString();
+            var @default = "Something Else";
+
+            // ACT
+            var trueStringResult = trueString.ToBoolean();
+            var trueCharReuslt = trueChar.ToBoolean();
+            var oneStringResult = oneString.ToBoolean();
+
+            var falseStringResult = falseString.ToBoolean();
+            var falseCharResult = falseChar.ToBoolean();
+            var zeroStringResult = zeroString.ToBoolean();
+
+            var defaultResult = @default.ToBoolean();
+
+            // Assert
+
+            Assert.That(trueStringResult, Is.True);
+            Assert.That(trueCharReuslt, Is.True);
+            Assert.That(oneStringResult, Is.True);
+
+            Assert.That(falseStringResult, Is.False);
+            Assert.That(falseCharResult, Is.False);
+            Assert.That(zeroStringResult, Is.False);
+
+            Assert.That(defaultResult, Is.False);
+        }
+
+        [Test]
+        public void String_ToBoolean_TrueValues_NoDefaultUpdate_Sent_And_Correctly_Parsed()
+        {
+            // Arrange
+            var trueValues = new[] { "T", "LukeSkywalker", "God" };
+
+            // ACT
+            var firstTrue = "T".ToBoolean(trueValues);
+            var secondTrue = "lukeSkYwalker".ToBoolean(trueValues);
+            var thirdTrue = "God".ToBoolean(trueValues);
+
+            var firstFalse = "Brenton".ToBoolean(trueValues);
+            var secondFalse = "False".ToBoolean(trueValues);
+
+            // Assert
+
+            Assert.That(firstTrue, Is.True);
+            Assert.That(secondTrue, Is.True);
+            Assert.That(thirdTrue, Is.True);
+
+            Assert.That(firstFalse, Is.False);
+            Assert.That(secondFalse, Is.False);
+        }
+
+        [Test]
+        public void String_ToBoolean_TrueValues_DefaultAsTrue_Sent_And_Correctly_Parsed()
+        {
+            // Arrange
+            var trueValues = new[] { "T", "LukeSkywalker", "God" };
+
+            // ACT
+            var firstTrue = "T".ToBoolean(trueValues, @default: true);
+            var secondTrue = "lukeSkYwalker".ToBoolean(trueValues, @default: true);
+            var thirdTrue = "God".ToBoolean(trueValues, @default: true);
+
+            var firstFalse = "Brenton".ToBoolean(trueValues, @default: true);
+            var secondFalse = "False".ToBoolean(trueValues, @default: true);
+
+            // Assert
+
+            Assert.That(firstTrue, Is.True);
+            Assert.That(secondTrue, Is.True);
+            Assert.That(thirdTrue, Is.True);
+
+            Assert.That(firstFalse, Is.True);
+            Assert.That(secondFalse, Is.True);
+        }
+
+        [Test]
+        public void String_ToBoolean_FalseValues_Sent_NoDefaultUpdate_And_Correctly_Parsed()
+        {
+            // Arrange
+            var falseValues = new[] { "0", "BananaBread" };
+
+            // ACT
+            var firstTrue = "0".ToBoolean(falseValues: falseValues);
+            var secondTrue = "BananaBREAD".ToBoolean(falseValues: falseValues);
+
+            var firstFalse = "true".ToBoolean(falseValues: falseValues);
+            var secondFalse = "TRUEDAMMIT".ToBoolean(falseValues: falseValues);
+
+            // Assert
+
+            Assert.That(firstTrue, Is.False);
+            Assert.That(secondTrue, Is.False);
+
+            Assert.That(firstFalse, Is.False);
+            Assert.That(secondFalse, Is.False);
+        }
+
+        [Test]
+        public void String_ToBoolean_FalseValues_Sent_DefaultAsTrue_And_Correctly_Parsed()
+        {
+            // Arrange
+            var falseValues = new[] { "0", "BananaBread" };
+
+            // ACT
+            var firstTrue = "0".ToBoolean(falseValues: falseValues, @default: true);
+            var secondTrue = "BananaBREAD".ToBoolean(falseValues: falseValues, @default: true);
+
+            var firstFalse = "true".ToBoolean(falseValues: falseValues, @default: true);
+            var secondFalse = "TRUEDAMMIT".ToBoolean(falseValues: falseValues, @default: true);
+
+            // Assert
+
+            Assert.That(firstTrue, Is.False);
+            Assert.That(secondTrue, Is.False);
+
+            Assert.That(firstFalse, Is.True);
+            Assert.That(secondFalse, Is.True);
+        }
+
+        [Test]
+        public void String_ToBoolean_NoValues_Sent_DefaultAsTrue_And_Correctly_Parsed()
+        {
+            // Arrange
+
+            // ACT
+            var firstTrue = "4".ToBoolean(@default: true);
+            var secondTrue = "true".ToBoolean(@default: true);
+            var thirdTrue = "false".ToBoolean(@default: true);
+
+            var firstFalse = "one".ToBoolean(@default: false);
+            var secondFalse = "truthy".ToBoolean(@default: false);
+
+            // Assert
+
+            Assert.That(firstTrue, Is.True);
+            Assert.That(secondTrue, Is.True);
+            Assert.That(thirdTrue, Is.True);
+
+            Assert.That(firstFalse, Is.False);
+            Assert.That(secondFalse, Is.False);
+        }
+
 
         private class ObjectToConvert
         {

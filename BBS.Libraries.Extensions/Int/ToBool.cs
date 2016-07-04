@@ -45,7 +45,7 @@ namespace BBS.Libraries.Extensions
         }
 
         public static bool ToBoolean(this int helper, IEnumerable<int> trueValues = null,
-            IEnumerable<int> falseValues = null, bool defaultReturn = false)
+            IEnumerable<int> falseValues = null, bool @default = false)
         {
             if (trueValues != null && trueValues.Contains(helper))
             {
@@ -57,7 +57,7 @@ namespace BBS.Libraries.Extensions
             }
             else
             {
-                return defaultReturn;
+                return @default;
             }
         }
     }

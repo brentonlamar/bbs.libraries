@@ -22,6 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -61,20 +62,20 @@ namespace BBS.Libraries.Extensions
             else return false;
         }
 
-        public static bool ToBoolean(this string helper, IEnumerable<string> TrueValues = null,
-            IEnumerable<string> FalseValues = null, bool DefaultReturn = false)
+        public static bool ToBoolean(this string helper, IEnumerable<string> trueValues = null,
+            IEnumerable<string> falseValues = null, bool @default = false)
         {
-            if (TrueValues != null && TrueValues.Contains(helper))
+            if (trueValues != null && trueValues.Contains(helper, StringComparer.CurrentCultureIgnoreCase))
             {
                 return true;
             }
-            else if (FalseValues != null && FalseValues.Contains(helper))
+            else if (falseValues != null && falseValues.Contains(helper, StringComparer.CurrentCultureIgnoreCase))
             {
                 return false;
             }
             else
             {
-                return DefaultReturn;
+                return @default;
             }
         }
     }
