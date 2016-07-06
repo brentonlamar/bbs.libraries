@@ -22,6 +22,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Templating.Razor/bin/Release/BBS.Libraries.Templating.Razor.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Templating.Razor.dll" target="lib" />
   </files>
 </package>

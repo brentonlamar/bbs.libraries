@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Templating.Handlebars/bin/Release/BBS.Libraries.Templating.Handlebars.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Templating.Handlebars.dll" target="lib" />
   </files>
 </package>

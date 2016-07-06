@@ -12,6 +12,6 @@
     <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Contracts/bin/Release/BBS.Libraries.Contracts.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Contracts.dll" target="lib" />
   </files>
 </package>

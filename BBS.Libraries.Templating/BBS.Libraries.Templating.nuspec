@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Templating/bin/Release/BBS.Libraries.Templating.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Templating.dll" target="lib" />
   </files>
 </package>

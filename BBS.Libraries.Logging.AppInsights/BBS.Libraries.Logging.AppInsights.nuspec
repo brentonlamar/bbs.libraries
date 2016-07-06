@@ -17,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Logging.AppInsights/bin/Release/BBS.Libraries.Logging.AppInsights.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Logging.AppInsights.dll" target="lib" />
   </files>
 </package>

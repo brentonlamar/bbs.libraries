@@ -17,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./BBS.Libraries.Emails/bin/Release/BBS.Libraries.Emails.dll" target="lib" />
+    <file src="bin/Release/BBS.Libraries.Emails.dll" target="lib" />
   </files>
 </package>
