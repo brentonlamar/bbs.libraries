@@ -13,6 +13,6 @@ script:
 
 deploy:
   provider: script
-  script: ./scripts/DeployingNuget.sh
+  script: ./Scripts/DeployingNuget.sh
   on:
     branch: adding-nuget
