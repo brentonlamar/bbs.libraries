@@ -1,18 +1,9 @@
 # Gets Version from AsseblyInfo.cs updates nuspec's version
 if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
-	declare regex="AssemblyVersion\(\"([0-9]+.[0-9]+.[0-9]+.[0-9]+)\"\)"
-	#declare file_content=$( cat $AssemblyFilePath)
-	
+	echo "========================================================="
 	echo "Updating nuspec version"
 
-	echo "Contracts nuspec before sed:"
-	cat $TRAVIS_BUILD_DIR/BBS.Libraries.Contracts/Properties/AssemblyInfo.cs
-	cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
-		sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
-	echo "Contracts nuspec after sed:"
-
-	cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec #just to see what happens!
-	
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Emails/BBS.Libraries.Emails.nuspec 
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Enums/BBS.Libraries.Enums.nuspec 
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Extensions/BBS.Libraries.Extensions.nuspec 
@@ -23,6 +14,8 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Templating/BBS.Libraries.Templating.nuspec 
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Templating.Handlebars/BBS.Libraries.Templating.Handlebars.nuspec  
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\11.0.${TRAVIS_BUILD_NUMBER}.0\2|g" ./BBS.Libraries.Templating.Razor/BBS.Libraries.Templating.Razor.nuspec  
+
+	echo "========================================================="
 
 	echo "Starting to pack the NuGet packages"
 
@@ -47,7 +40,7 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	# fi
 
 	# if [[ ${IsUploadingNugetToPublicServer,,} == "true" ]]; then
-			echo "Deploying to public hosting server"
-			nuget push ./*.nupkg $PublicNugetAPIKey
+	echo "Deploying to public hosting server"
+	nuget push ./*.nupkg -ApiKey $PublicNugetAPIKey
 	# fi
 fi
