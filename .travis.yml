@@ -13,6 +13,7 @@ script:
 
 deploy:
   provider: script
-  script: ./Scripts/DeployingNuget.sh
+   - chmod +x ./Scripts/DeployingNuget.sh
+   - ./Scripts/DeployingNuget.sh
   on:
     branch: adding-nuget
