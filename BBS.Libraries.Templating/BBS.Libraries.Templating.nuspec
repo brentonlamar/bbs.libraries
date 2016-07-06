@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.Logging.AppInsights</id>
+    <id>BBS.Libraries.Templating</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Logging for AppInsights</description>
+    <description>Templating base classes.</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="Microsoft.ApplicationInsights" version="[2.1.0]" />
-      <dependency id="BBS.Libraries.Contracts" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.Logging" version="[16.7.0]" />
+      <dependency id="BBS.Libraries.IO" version="[16.7.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Templating\bin\Release\BBS.Libraries.Templating.dll" target="lib" />
+  </files>
 </package>

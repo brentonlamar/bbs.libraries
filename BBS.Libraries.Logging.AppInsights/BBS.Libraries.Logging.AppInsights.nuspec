@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.Extensions</id>
+    <id>BBS.Libraries.Logging.AppInsights</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Extensions and helpers</description>
+    <description>Logging for AppInsights</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="[9.0.1]" />
+      <dependency id="Microsoft.ApplicationInsights" version="[2.1.0]" />
+      <dependency id="BBS.Libraries.Contracts" version="[16.7.0]" />
+      <dependency id="BBS.Libraries.Logging" version="[16.7.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Logging.AppInsights\bin\Release\BBS.Libraries.Logging.AppInsights.dll" target="lib" />
+  </files>
 </package>

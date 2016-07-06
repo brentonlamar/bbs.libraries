@@ -21,4 +21,7 @@
       <dependency id="BBS.Libraries.Templating" version="[16.7.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Templating.Razor\bin\Release\BBS.Libraries.Templating.Razor.dll" target="lib" />
+  </files>
 </package>

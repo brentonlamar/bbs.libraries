@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.IO</id>
+    <id>BBS.Libraries.Logging</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Helpers for IO Functionality</description>
+    <description>Logging</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="ICSharpCode.SharpZipLib.Patched" version="[0.86.5]" />
       <dependency id="BBS.Libraries.Contracts" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.Extensions" version="[16.7.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Logging\bin\Release\BBS.Libraries.Logging.dll" target="lib" />
+  </files>
 </package>

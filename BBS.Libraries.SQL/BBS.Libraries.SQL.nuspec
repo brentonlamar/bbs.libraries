@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.Emails</id>
+    <id>BBS.Libraries.SQL</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Emails, Serialized, and tempating</description>
+    <description>SQL Helpers, Command Object, etc.</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <dependencies>
-      <dependency id="BBS.Libraries.Contracts" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.Extensions" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.Templating" version="[16.7.0]" />
-    </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.SQL\bin\Release\BBS.Libraries.SQL.dll" target="lib" />
+  </files>
 </package>

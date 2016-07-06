@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.Contracts</id>
+    <id>BBS.Libraries.Extensions</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Shared contracts</description>
+    <description>Extensions and helpers</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="[9.0.1]" />
+    </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Extensions\bin\Release\BBS.Libraries.Extensions.dll" target="lib" />
+  </files>
 </package>

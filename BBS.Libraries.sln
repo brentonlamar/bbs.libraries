@@ -43,17 +43,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{CE163B92-29FE-494E-A534-EFC7BA97E967}"
 	ProjectSection(SolutionItems) = preProject
-		BBS.Libraries.Contracts\bbs.libraries.contracts.csproj.nuspec = BBS.Libraries.Contracts\bbs.libraries.contracts.csproj.nuspec
-		BBS.Libraries.Emails\bbs.libraries.emails.csproj.nuspec = BBS.Libraries.Emails\bbs.libraries.emails.csproj.nuspec
-		BBS.Libraries.Enums\bbs.libraries.enums.csproj.nuspec = BBS.Libraries.Enums\bbs.libraries.enums.csproj.nuspec
-		BBS.Libraries.Extensions\bbs.libraries.extensions.csproj.nuspec = BBS.Libraries.Extensions\bbs.libraries.extensions.csproj.nuspec
-		BBS.Libraries.IO\bbs.libraries.io.csproj.nuspec = BBS.Libraries.IO\bbs.libraries.io.csproj.nuspec
-		BBS.Libraries.Logging.AppInsights\bbs.libraries.logging.appinsights.csproj.nuspec = BBS.Libraries.Logging.AppInsights\bbs.libraries.logging.appinsights.csproj.nuspec
-		BBS.Libraries.Logging\bbs.libraries.logging.csproj.nuspec = BBS.Libraries.Logging\bbs.libraries.logging.csproj.nuspec
-		BBS.Libraries.SQL\bbs.libraries.sql.csproj.nuspec = BBS.Libraries.SQL\bbs.libraries.sql.csproj.nuspec
-		BBS.Libraries.Templating\bbs.libraries.templating.csproj.nuspec = BBS.Libraries.Templating\bbs.libraries.templating.csproj.nuspec
-		BBS.Libraries.Templating.Handlebars\bbs.libraries.templating.handlebars.csproj.nuspec = BBS.Libraries.Templating.Handlebars\bbs.libraries.templating.handlebars.csproj.nuspec
-		BBS.Libraries.Templating.Razor\bbs.libraries.templating.razor.csproj.nuspec = BBS.Libraries.Templating.Razor\bbs.libraries.templating.razor.csproj.nuspec
+		BBS.Libraries.Contracts\BBS.Libraries.Contracts.nuspec = BBS.Libraries.Contracts\BBS.Libraries.Contracts.nuspec
+		BBS.Libraries.Emails\BBS.Libraries.Emails.nuspec = BBS.Libraries.Emails\BBS.Libraries.Emails.nuspec
+		BBS.Libraries.Enums\BBS.Libraries.Enums.nuspec = BBS.Libraries.Enums\BBS.Libraries.Enums.nuspec
+		BBS.Libraries.Extensions\BBS.Libraries.Extensions.nuspec = BBS.Libraries.Extensions\BBS.Libraries.Extensions.nuspec
+		BBS.Libraries.IO\BBS.Libraries.IO.nuspec = BBS.Libraries.IO\BBS.Libraries.IO.nuspec
+		BBS.Libraries.Logging.AppInsights\BBS.Libraries.Logging.AppInsights.nuspec = BBS.Libraries.Logging.AppInsights\BBS.Libraries.Logging.AppInsights.nuspec
+		BBS.Libraries.Logging\BBS.Libraries.Logging.nuspec = BBS.Libraries.Logging\BBS.Libraries.Logging.nuspec
+		BBS.Libraries.SQL\BBS.Libraries.SQL.nuspec = BBS.Libraries.SQL\BBS.Libraries.SQL.nuspec
+		BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.nuspec = BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.nuspec
+		BBS.Libraries.Templating\BBS.Libraries.Templating.nuspec = BBS.Libraries.Templating\BBS.Libraries.Templating.nuspec
+		BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.nuspec = BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4046E075-8721-4FA7-AAF3-F6CECC0A919A}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\DeployingNuget.sh = Scripts\DeployingNuget.sh
+		Scripts\IncrementVersion.sh = Scripts\IncrementVersion.sh
 	EndProjectSection
 EndProject
 Global

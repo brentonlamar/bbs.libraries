@@ -1,21 +1,22 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BBS.Libraries.Templating.Handlebars</id>
+    <id>BBS.Libraries.Emails</id>
     <version>16.7.0</version>
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Templating using Handlebars.Net</description>
+    <description>Emails, Serialized, and tempating</description>
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="Handlebars.Net" version="[1.7.1]" />
       <dependency id="BBS.Libraries.Contracts" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.Emails" version="[16.7.0]" />
-      <dependency id="BBS.Libraries.IO" version="[16.7.0]" />
+      <dependency id="BBS.Libraries.Extensions" version="[16.7.0]" />
       <dependency id="BBS.Libraries.Templating" version="[16.7.0]" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="BBS.Libraries.Emails\bin\Release\BBS.Libraries.Emails.dll" target="lib" />
+  </files>
 </package>
