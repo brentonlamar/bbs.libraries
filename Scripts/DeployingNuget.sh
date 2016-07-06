@@ -33,14 +33,8 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 
 	echo "Finished packing."
 
-
-	# if [[ ${IsUploadingNugetToPrivateServer,,} == "true" ]]; then
-	# 		echo "Deploying to private hosting server"
-	# 		nuget push ./*.nupkg -s $PrivateNugetServerURL $PrivateNugetAPIKey
-	# fi
-
-	# if [[ ${IsUploadingNugetToPublicServer,,} == "true" ]]; then
-	echo "Deploying to public hosting server"
-	nuget push ./*.nupkg -ApiKey $PublicNugetAPIKey
-	# fi
+	echo "Deploying to public hosting server"	
+	
+	nuget push ./*.nupkg -Source https://api.nuget.org/v3 -ApiKey $PublicNugetAPIKey	
+	
 fi
