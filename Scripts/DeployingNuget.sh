@@ -3,16 +3,14 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	declare regex="AssemblyVersion\(\"([0-9]+.[0-9]+.[0-9]+.[0-9]+)\"\)"
 	#declare file_content=$( cat $AssemblyFilePath)
 	
-	declare file_content= cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
-
 	echo "Updating nuspec version"
 
 	echo "Contracts nuspec before sed:"
-	cat file_content
+	cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
 		sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
 	echo "Contracts nuspec after sed:"
 
-	cat file_content #just to see what happens!
+	cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec #just to see what happens!
 	
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" ./BBS.Libraries.Emails/BBS.Libraries.Emails.nuspec 
 	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" ./BBS.Libraries.Enums/BBS.Libraries.Enums.nuspec 
