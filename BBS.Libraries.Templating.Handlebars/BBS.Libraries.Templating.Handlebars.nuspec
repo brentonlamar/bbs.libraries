@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Templating.Handlebars</id>
-    <version>$version$</version> <!-- Leave blank, automatically fetched from assemble file -->
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="$id$\bin\$configuration$\$id$.dll" target="lib" />
+    <file src="BBS.Libraries.Templating.Handlebars\bin\Release\BBS.Libraries.Templating.Handlebars.dll" target="lib" />
   </files>
 </package>

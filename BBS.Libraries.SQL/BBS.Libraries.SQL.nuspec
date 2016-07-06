@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.SQL</id>
-    <version>$version$</version> <!-- Leave blank, automatically fetched from assemble file -->
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -12,6 +12,6 @@
     <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
-    <file src="$id$\bin\$configuration$\$id$.dll" target="lib" />
+    <file src="BBS.Libraries.SQL\bin\Release\BBS.Libraries.SQL.dll" target="lib" />
   </files>
 </package>

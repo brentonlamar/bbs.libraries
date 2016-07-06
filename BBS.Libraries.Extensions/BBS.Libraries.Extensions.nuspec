@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Extensions</id>
-    <version>$version$</version> <!-- Leave blank, automatically fetched from assemble file -->
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="$id$\bin\$configuration$\$id$.dll" target="lib" />
+    <file src="BBS.Libraries.Extensions\bin\Release\BBS.Libraries.Extensions.dll" target="lib" />
   </files>
 </package>
