@@ -2,6 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Logging.AppInsights</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
