@@ -12,5 +12,5 @@ script:
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./UnitTests/BBS.Libraries.UnitTests.General/bin/Release/BBS.Libraries.UnitTests.General.dll
 
 deploy:
-	provider: script
-	script: ./scripts/DeployingNuget.sh
+  provider: script
+  script: ./scripts/DeployingNuget.sh
