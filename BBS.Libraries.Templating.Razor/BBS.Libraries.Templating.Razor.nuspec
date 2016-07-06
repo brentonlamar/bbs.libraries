@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Templating.Razor</id>
-    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <version>$version$</version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -22,6 +22,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="BBS.Libraries.Templating.Razor\bin\Release\BBS.Libraries.Templating.Razor.dll" target="lib" />
+    <file src="$id$\bin\$configuration$\$id$.dll" target="lib" />
   </files>
 </package>

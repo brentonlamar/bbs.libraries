@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Emails</id>
-    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <version>$version$</version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -17,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="BBS.Libraries.Emails\bin\Release\BBS.Libraries.Emails.dll" target="lib" />
+    <file src="$id$\bin\$configuration$\$id$.dll" target="lib" />
   </files>
 </package>
