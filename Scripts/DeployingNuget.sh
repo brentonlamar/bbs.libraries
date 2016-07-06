@@ -6,6 +6,7 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	echo "Updating nuspec version"
 
 	echo "Contracts nuspec before sed:"
+	cat $TRAVIS_BUILD_DIR/BBS.Libraries.Contracts/Properties/AssemblyInfo.cs
 	cat ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
 		sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" ./BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
 	echo "Contracts nuspec after sed:"
