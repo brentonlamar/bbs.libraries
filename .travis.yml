@@ -8,7 +8,7 @@ install:
 script:
   - chmod +x ./Scripts/IncrementVersion.sh
   - ./Scripts/IncrementVersion.sh
-  - xbuild /p:Configuration=Release BBS.Libraries.sln
+  - xbuild /p:Configuration=Release BBS.Libraries.sln /p:TargetFrameworkVersion="v4.6" 
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./UnitTests/BBS.Libraries.UnitTests.General/bin/Release/BBS.Libraries.UnitTests.General.dll
 
 after_success:
