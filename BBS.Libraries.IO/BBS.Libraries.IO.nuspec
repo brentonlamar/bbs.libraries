@@ -17,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="BBS.Libraries.IO\bin\Release\BBS.Libraries.IO.dll" target="lib" />
+    <file src="./BBS.Libraries.IO/bin/Release/BBS.Libraries.IO.dll" target="lib" />
   </files>
 </package>

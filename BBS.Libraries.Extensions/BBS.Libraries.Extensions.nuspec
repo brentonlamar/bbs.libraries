@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="BBS.Libraries.Extensions\bin\Release\BBS.Libraries.Extensions.dll" target="lib" />
+    <file src="./BBS.Libraries.Extensions/bin/Release/BBS.Libraries.Extensions.dll" target="lib" />
   </files>
 </package>

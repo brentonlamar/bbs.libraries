@@ -12,6 +12,6 @@
     <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
-    <file src="BBS.Libraries.SQL\bin\Release\BBS.Libraries.SQL.dll" target="lib" />
+    <file src="./BBS.Libraries.SQL/bin/Release/BBS.Libraries.SQL.dll" target="lib" />
   </files>
 </package>
