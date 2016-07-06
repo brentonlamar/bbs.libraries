@@ -3,28 +3,49 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	declare regex="AssemblyVersion\(\"([0-9]+.[0-9]+.[0-9]+.[0-9]+)\"\)"
 	#declare file_content=$( cat $AssemblyFilePath)
 	
+	declare file_content=$( cat BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec)
+
 	echo "Updating nuspec version"
 
-	echo "Contracts nuspec before sed: \r\n"
+	echo "Contracts nuspec before sed:"
 
-	cat BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec
+	cat file_content
 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec 
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content
 	
-	echo "Contracts nuspec after sed: \r\n"
+	echo "Contracts nuspec after sed:"
 
-	cat BBS.Libraries.Contracts/BBS.Libraries.Contracts.nuspec 
+	cat file_content #just to see what happens!
 	
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Emails/BBS.Libraries.Emails.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Enums/BBS.Libraries.Enums.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Extensions/BBS.Libraries.Extensions.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.IO/BBS.Libraries.IO.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Logging/BBS.Libraries.Logging.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Logging.AppInsights/BBS.Libraries.Logging.AppInsights.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.SQL/BBS.Libraries.SQL.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Templating/BBS.Libraries.Templating.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Templating.Handlebars/BBS.Libraries.Templating.Handlebars.nuspec 
-	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" cat BBS.Libraries.Templating.Razor/BBS.Libraries.Templating.Razor.nuspec 
+	file_content=$( cat BBS.Libraries.Emails/BBS.Libraries.Emails.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content
+
+	file_content=$( cat BBS.Libraries.Enums/BBS.Libraries.Enums.nuspec  )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+	
+	file_content=$( cat BBS.Libraries.Extensions/BBS.Libraries.Extensions.nuspec  )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+
+	file_content=$( cat BBS.Libraries.IO/BBS.Libraries.IO.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+
+	file_content=$( cat BBS.Libraries.Logging/BBS.Libraries.Logging.nuspec  )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+
+	file_content=$( cat BBS.Libraries.Logging.AppInsights/BBS.Libraries.Logging.AppInsights.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+
+	file_content=$( cat BBS.Libraries.SQL/BBS.Libraries.SQL.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content  
+
+	file_content=$( cat BBS.Libraries.Templating/BBS.Libraries.Templating.nuspec  )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content 
+
+	file_content=$( cat BBS.Libraries.Templating.Handlebars/BBS.Libraries.Templating.Handlebars.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content  
+
+	file_content=$( cat BBS.Libraries.Templating.Razor/BBS.Libraries.Templating.Razor.nuspec )
+	sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" file_content  
 
 	echo "Starting to pack the NuGet packages"
 
