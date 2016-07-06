@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>BBS.Libraries.Templating</id>
-    <version>16.7.0</version>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
     <authors>Betabyte Software</authors>
     <owners>Betabte Software</owners>
     <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
@@ -11,7 +11,7 @@
     <releaseNotes>Initial release from github library</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="BBS.Libraries.IO" version="[16.7.0]" />
+      <dependency id="BBS.Libraries.IO" version="1.0.21.0" />
     </dependencies>
   </metadata>
   <files>
