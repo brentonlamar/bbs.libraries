@@ -2,8 +2,8 @@ language: csharp
 solution: BBS.Libraries.sln
 
 install:
-  - nuget restore BBS.Libraries.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - nuget restore BBS.Libraries.sln -Verbosity quiet
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner 
 
 script:
   - chmod +x ./Scripts/IncrementVersion.sh
