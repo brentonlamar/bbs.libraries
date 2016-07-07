@@ -34,9 +34,7 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 	echo "Finished packing."
 
 	echo "Deploying to public hosting server"	
-	
-	echo "nuget push ./*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey $PublicNugetAPIKey -NonInteractive -Verbosity Detailed"
 
-	nuget push ./*.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey $PublicNugetAPIKey -NonInteractive -Verbosity Detailed
+	nuget push ./*.nupkg $PublicNugetAPIKey -Source https://www.nuget.org/api/v2/package
 	
 fi
