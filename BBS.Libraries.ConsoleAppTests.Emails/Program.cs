@@ -82,8 +82,8 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
 
             // Batch size of Handlebars ;)
 
-            var models = GenerateTester.GetEmailModels().ToList();
-            handleBarsEngine.GenerateAndSend(models, 5);
+            //var models = GenerateTester.GetEmailModels().ToList();
+            //handleBarsEngine.GenerateAndSend(models, 5);
         }
     }
 
