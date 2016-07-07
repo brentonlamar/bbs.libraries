@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,38 +23,34 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Object
-  {
-    public static string ToBase64String(this object @object)
+    public static partial class Object
     {
-      if (@object != null)
-      {
-        using (var stream = new System.IO.MemoryStream())
+        public static string ToBase64String(this object @object)
         {
-          new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter().Serialize(stream, @object);
+            if (@object != null)
+            {
+                using (var stream = new System.IO.MemoryStream())
+                {
+                    new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter().Serialize(stream, @object);
 
-          return Convert.ToBase64String(stream.ToArray());
+                    return Convert.ToBase64String(stream.ToArray());
+                }
+            }
+            return null;
         }
-      }
-      return null;
-    }
 
-    public static object FromString(this string objectString) 
-    {
-      byte[] bytes = Convert.FromBase64String(objectString);
-      using (System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
-      {
-        ms.Write(bytes, 0, bytes.Length);
-        ms.Position = 0;
-        return new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter().Deserialize(ms);
-      }
+        public static object FromString(this string objectString)
+        {
+            byte[] bytes = Convert.FromBase64String(objectString);
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
+            {
+                ms.Write(bytes, 0, bytes.Length);
+                ms.Position = 0;
+                return new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter().Deserialize(ms);
+            }
+        }
     }
-  }
 }

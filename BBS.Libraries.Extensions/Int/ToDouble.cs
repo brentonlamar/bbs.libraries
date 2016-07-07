@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,18 +23,14 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Int
-  {
-    public static Double ToDouble(this int helper)
+    public static partial class Int
     {
-      return Convert.ToDouble(helper);
+        public static Double ToDouble(this int helper)
+        {
+            return Convert.ToDouble(helper);
+        }
     }
-  }
 }

@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,46 +23,42 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Stream
-  {
-    public static byte[] ToByteArray(this System.IO.Stream helper)
+    public static partial class Stream
     {
-      var output = new byte[helper.Length];
-
-      helper.Rewind();
-
-      byte[] buffer = new byte[helper.Length];
-      int totalBytesRead = 0;
-      int bytesRead;
-
-      while ((bytesRead = helper.Read(buffer, totalBytesRead, buffer.Length - totalBytesRead)) > 0)
-      {
-        totalBytesRead += bytesRead;
-
-        if (totalBytesRead == buffer.Length)
+        public static byte[] ToByteArray(this System.IO.Stream helper)
         {
-          int nextByte = helper.ReadByte();
-          if (nextByte != -1)
-          {
-            byte[] temp = new byte[buffer.Length*2];
-            Buffer.BlockCopy(buffer, 0, temp, 0, buffer.Length);
-            Buffer.SetByte(temp, totalBytesRead, (byte) nextByte);
-            buffer = temp;
-            totalBytesRead++;
-          }
+            var output = new byte[helper.Length];
+
+            helper.Rewind();
+
+            byte[] buffer = new byte[helper.Length];
+            int totalBytesRead = 0;
+            int bytesRead;
+
+            while ((bytesRead = helper.Read(buffer, totalBytesRead, buffer.Length - totalBytesRead)) > 0)
+            {
+                totalBytesRead += bytesRead;
+
+                if (totalBytesRead == buffer.Length)
+                {
+                    int nextByte = helper.ReadByte();
+                    if (nextByte != -1)
+                    {
+                        byte[] temp = new byte[buffer.Length*2];
+                        Buffer.BlockCopy(buffer, 0, temp, 0, buffer.Length);
+                        Buffer.SetByte(temp, totalBytesRead, (byte) nextByte);
+                        buffer = temp;
+                        totalBytesRead++;
+                    }
+                }
+            }
+
+            output = buffer;
+
+            return output;
         }
-      }
-
-      output = buffer;
-
-      return output;
     }
-  }
 }

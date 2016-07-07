@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,14 +22,9 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails
@@ -94,10 +89,10 @@ namespace BBS.Libraries.Emails
             var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
             var plainViewAlternateView = AlternateView.CreateAlternateViewFromString(PlainView(emailModel));
 
-            return new MailMessage()
+            return new MailMessage
             {
                 Subject = this.SubjectView(emailModel),
-                AlternateViews = new MailMessageAlternateViewCollection() { plainViewAlternateView, mhtmlViewAlternateView },
+                AlternateViews = new MailMessageAlternateViewCollection { plainViewAlternateView, mhtmlViewAlternateView },
                 To = emailModel.ToEmailAddressCollection,
                 From = emailModel.FromEmailAddress,
                 CC = emailModel.CcEmailAddressCollection ?? new EmailAddressCollection(),

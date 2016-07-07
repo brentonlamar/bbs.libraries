@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,45 +22,43 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Int
-  {
-    public static bool ToBoolean(this int helper)
+    public static partial class Int
     {
-      switch (helper)
-      {
-        case 0:
-          return false;
-          break;
-        case 1:
-          return true;
-          break;
-        default:
-          return false;
-      }
-    }
+        public static bool ToBoolean(this int helper)
+        {
+            switch (helper)
+            {
+                case 0:
+                    return false;
+                    break;
+                case 1:
+                    return true;
+                    break;
+                default:
+                    return false;
+            }
+        }
 
-    public static bool ToBoolean(this int helper, IEnumerable<int> TrueValues = null, IEnumerable<int> FalseValues = null, bool DefaultReturn = false)
-    {
-      if (TrueValues != null && TrueValues.Contains(helper))
-      {
-        return true;
-      }
-      else if (FalseValues != null && FalseValues.Contains(helper))
-      {
-        return false;
-      }
-      else
-      {
-        return DefaultReturn;
-      }
+        public static bool ToBoolean(this int helper, IEnumerable<int> trueValues = null,
+            IEnumerable<int> falseValues = null, bool @default = false)
+        {
+            if (trueValues != null && trueValues.Contains(helper))
+            {
+                return true;
+            }
+            else if (falseValues != null && falseValues.Contains(helper))
+            {
+                return false;
+            }
+            else
+            {
+                return @default;
+            }
+        }
     }
-  }
 }

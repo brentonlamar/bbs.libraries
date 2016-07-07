@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BBS.Libraries.Logging.AppInsights</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Logging for AppInsights</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="Microsoft.ApplicationInsights" version="[2.1.0]" />
+      <dependency id="BBS.Libraries.Contracts" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Logging" version="1.0.21.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/BBS.Libraries.Logging.AppInsights.dll" target="lib" />
+  </files>
+</package>

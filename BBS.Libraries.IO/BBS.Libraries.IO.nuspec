@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BBS.Libraries.IO</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helpers for IO Functionality</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="ICSharpCode.SharpZipLib.Patched" version="[0.86.5]" />
+      <dependency id="BBS.Libraries.Contracts" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Extensions" version="1.0.21.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/BBS.Libraries.IO.dll" target="lib" />
+  </files>
+</package>

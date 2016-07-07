@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,59 +25,58 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class String
-  {
-    public static bool ToBoolean(this string helper)
+    public static partial class String
     {
-      if (helper != string.Empty)
-      {
-        switch (helper.ToLower())
+        public static bool ToBoolean(this string helper)
         {
-          case "true":
-            return true;
-            break;
-          case "false":
-            return false;
-            break;
-          case "t":
-            return true;
-            break;
-          case "f":
-            return false;
-            break;
-          case "1":
-            return true;
-            break;
-          case "0":
-            return false;
-            break;
-          default:
-            return false;
-            break;
+            if (helper != string.Empty)
+            {
+                switch (helper.ToLower())
+                {
+                    case "true":
+                        return true;
+                        break;
+                    case "false":
+                        return false;
+                        break;
+                    case "t":
+                        return true;
+                        break;
+                    case "f":
+                        return false;
+                        break;
+                    case "1":
+                        return true;
+                        break;
+                    case "0":
+                        return false;
+                        break;
+                    default:
+                        return false;
+                        break;
+                }
+            }
+            else return false;
         }
-      }
-      else return false;
-    }
 
-    public static bool ToBoolean(this string helper, IEnumerable<string> TrueValues = null, IEnumerable<string> FalseValues = null, bool DefaultReturn = false)
-    {
-      if (TrueValues != null && TrueValues.Contains(helper))
-      {
-        return true;
-      }
-      else if (FalseValues != null && FalseValues.Contains(helper))
-      {
-        return false;
-      }
-      else
-      {
-        return DefaultReturn;
-      }
+        public static bool ToBoolean(this string helper, IEnumerable<string> trueValues = null,
+            IEnumerable<string> falseValues = null, bool @default = false)
+        {
+            if (trueValues != null && trueValues.Contains(helper, StringComparer.CurrentCultureIgnoreCase))
+            {
+                return true;
+            }
+            else if (falseValues != null && falseValues.Contains(helper, StringComparer.CurrentCultureIgnoreCase))
+            {
+                return false;
+            }
+            else
+            {
+                return @default;
+            }
+        }
     }
-  }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BBS.Libraries.Logging</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Logging</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="BBS.Libraries.Contracts" version="1.0.21.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/BBS.Libraries.Logging.dll" target="lib" />
+  </files>
+</package>

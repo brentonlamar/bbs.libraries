@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BBS.Libraries.Templating.Razor</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Templating using RazorEngine</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Razor" version="[3.2.3]" />
+      <dependency id="Microsoft.AspNet.WebPages" version="[3.2.3]" />
+      <dependency id="Microsoft.Web.Infrastructure" version="[1.0.0.0]" />
+      <dependency id="RazorEngine" version="[3.8.2]" />
+      <dependency id="BBS.Libraries.Contracts" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Emails" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.IO" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Templating" version="1.0.21.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/BBS.Libraries.Templating.Razor.dll" target="lib" />
+  </files>
+</package>

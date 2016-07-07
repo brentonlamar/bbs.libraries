@@ -1,7 +1,7 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //    MIT License
 //
-//    Copyright (c) Wednesday, June 29, 2016 1:15:39 PM Betabyte Software
+//    Copyright (c) 2016 Betabyte Software
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@
 //
 //    The above copyright notice and this permission notice shall be included in all
 //    copies or substantial portions of the Software.
-
+//
 //    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,28 +22,36 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace BBS.Libraries.Extensions
 {
-  public static partial class Stream
-  {
-    public static void Rewind(this System.IO.Stream stream)
+    public static partial class Stream
     {
-      if (stream.Position > 0) stream.Position = 0;
-      if (stream.Length > 0) stream.Flush();
-      if (stream.CanSeek) stream.Seek(0, SeekOrigin.Begin);
+        public static void Rewind(this System.IO.Stream stream)
+        {
+            RewindStream(stream);
+        }
+
+        public static void Rewind(this System.IO.MemoryStream stream)
+        {
+            RewindStream(stream);
+        }
+
+        private static void RewindStream(System.IO.Stream stream)
+        {
+            if (stream.Position > 0)
+            {
+                stream.Position = 0;
+            }
+            if (stream.Length > 0)
+            {
+                stream.Flush();
+            }
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
+        }
     }
-    public static void Rewind(this System.IO.MemoryStream stream)
-    {
-      if (stream.Position > 0) stream.Position = 0;
-      if (stream.Length > 0) stream.Flush();
-      if (stream.CanSeek) stream.Seek(0, SeekOrigin.Begin);
-    }
-  }
 }

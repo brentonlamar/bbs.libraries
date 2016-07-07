@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BBS.Libraries.Emails</id>
+    <version></version> <!-- Leave blank, automatically fetched from assemble file -->
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Emails, Serialized, and tempating</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="BBS.Libraries.Contracts" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Extensions" version="1.0.21.0" />
+      <dependency id="BBS.Libraries.Templating" version="1.0.21.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/BBS.Libraries.Emails.dll" target="lib" />
+  </files>
+</package>
