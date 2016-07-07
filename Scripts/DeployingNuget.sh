@@ -35,6 +35,6 @@ if [ "$TRAVIS_BRANCH" == "adding-nuget" ]; then
 
 	echo "Deploying to public hosting server"	
 
-	nuget push ./BBS.Libraries.Enums/BBS.Libraries.Enums.1.0.${TRAVIS_BUILD_NUMBER}.0.nupkg $PublicNugetAPIKey -Source https://www.nuget.org/api/v2/package
+	nuget push ./BBS.Libraries.Enums.1.0.${TRAVIS_BUILD_NUMBER}.0.nupkg $PublicNugetAPIKey -Source https://www.nuget.org/api/v2/package
 	
 fi
