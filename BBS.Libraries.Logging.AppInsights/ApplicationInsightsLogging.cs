@@ -46,7 +46,13 @@ namespace BBS.Libraries.Logging.AppInsights
 
             if (!string.IsNullOrEmpty(this.InstrumentationKey))
             {
-                this._telemetryClient.Context.InstrumentationKey = this.InstrumentationKey;
+                this._telemetryClient = new TelemetryClient
+                {
+                    Context =
+                    {
+                        InstrumentationKey = this.InstrumentationKey
+                    }
+                };
             }
         }
 
