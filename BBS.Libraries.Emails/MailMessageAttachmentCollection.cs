@@ -23,20 +23,32 @@
 //-----------------------------------------------------------------------
 
 using System.Collections.Generic;
+using BBS.Libraries.Contracts;
 using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails
 {
-  public class MailMessageAttachmentCollection : List<MailMessageAttachment>
-  {
-    public void Add(System.IO.Stream stream, string fileName, string mediaType)
+    public class MailMessageAttachmentCollection : List<IMailMessageAttachment>, IMailMessageAttachmentCollection
     {
-      base.Add(new MailMessageAttachment { Content = stream.ToByteArray(), ContentType = mediaType, Name = fileName });
-    }
+        public void Add(System.IO.Stream stream, string fileName, string mediaType)
+        {
+            base.Add(new MailMessageAttachment
+            {
+                Content = stream.ToByteArray(),
+                ContentType = mediaType,
+                Name = fileName
+            });
+        }
 
-    public void Add(System.Net.Mail.Attachment attachment)
-    {
-      base.Add(new MailMessageAttachment {Content = attachment.ContentStream.ToByteArray(), ContentType = attachment.ContentType.MediaType, Name = attachment.Name});
+        public void Add(System.Net.Mail.Attachment attachment)
+        {
+            base.Add(new MailMessageAttachment
+            {
+                Content = attachment.ContentStream.ToByteArray(),
+                ContentType = attachment.ContentType.MediaType,
+                Name = attachment.Name
+            });
+        }
+        
     }
-  }
 }

@@ -25,6 +25,7 @@
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Net.Mime;
+using BBS.Libraries.Contracts;
 using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails
@@ -57,6 +58,7 @@ namespace BBS.Libraries.Emails
         protected string MhtmlViewFileName { get; set; }
 
         protected BBS.Libraries.Templating.ITemplateService<T> _templateService;
+
         protected string SubjectView(IEmailBaseModel model)
         {
             if (!string.IsNullOrWhiteSpace(this.SubjectViewFileName))
@@ -86,13 +88,14 @@ namespace BBS.Libraries.Emails
 
         protected virtual BBS.Libraries.Emails.MailMessage Generate(IEmailBaseModel emailModel)
         {
-            var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
+            var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel),
+                new ContentType("text/html"));
             var plainViewAlternateView = AlternateView.CreateAlternateViewFromString(PlainView(emailModel));
 
             return new MailMessage
             {
                 Subject = this.SubjectView(emailModel),
-                AlternateViews = new MailMessageAlternateViewCollection { plainViewAlternateView, mhtmlViewAlternateView },
+                AlternateViews = new MailMessageAlternateViewCollection {plainViewAlternateView, mhtmlViewAlternateView},
                 To = emailModel.ToEmailAddressCollection,
                 From = emailModel.FromEmailAddress,
                 CC = emailModel.CcEmailAddressCollection ?? new EmailAddressCollection(),

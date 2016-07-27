@@ -35,9 +35,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEmailAddress.cs" />
+    <Compile Include="IEmailAddressCollection.cs" />
+    <Compile Include="IEmailBaseModel.cs" />
     <Compile Include="IFileManipulator.cs" />
     <Compile Include="ILog.cs" />
-    <Compile Include="IMailMessage.cs" />
+    <Compile Include="IMailMessageAttachment.cs" />
+    <Compile Include="IMailMessageAttachmentCollection.cs" />
     <Compile Include="IRazorContentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
