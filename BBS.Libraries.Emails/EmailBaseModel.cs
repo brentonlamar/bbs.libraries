@@ -35,5 +35,14 @@ namespace BBS.Libraries.Emails
         public IEmailAddressCollection BccEmailAddressCollection { get; set; }
         public IMailMessageAttachmentCollection Attachments { get; set; }
         public MailPriority Priority { get; set; }
+
+        protected EmailBaseModel()
+        {
+            FromEmailAddress = new EmailAddress();
+            ToEmailAddressCollection = new EmailAddressCollection();
+            CcEmailAddressCollection = new EmailAddressCollection();
+            BccEmailAddressCollection = new EmailAddressCollection();
+            Attachments = new MailMessageAttachmentCollection();
+        }
     }
 }
