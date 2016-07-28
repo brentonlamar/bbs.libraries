@@ -22,6 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Net.Mime;
@@ -41,12 +42,23 @@ namespace BBS.Libraries.Emails
             }
         }
 
-        public static void Send(BBS.Libraries.Emails.MailMessage email)
+        public static bool Send(BBS.Libraries.Emails.MailMessage email)
         {
-            using (var smtp = new System.Net.Mail.SmtpClient())
+            bool result = true;
+
+            try
             {
-                smtp.Send(email.Message());
+                using (var smtp = new System.Net.Mail.SmtpClient())
+                {
+                    smtp.Send(email.Message());
+                }
             }
+            catch (Exception exception)
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 
@@ -86,10 +98,9 @@ namespace BBS.Libraries.Emails
             return string.Empty;
         }
 
-        protected virtual BBS.Libraries.Emails.MailMessage Generate(IEmailBaseModel emailModel)
+        public virtual BBS.Libraries.Emails.MailMessage Generate(IEmailBaseModel emailModel)
         {
-            var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel),
-                new ContentType("text/html"));
+            var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
             var plainViewAlternateView = AlternateView.CreateAlternateViewFromString(PlainView(emailModel));
 
             return new MailMessage
