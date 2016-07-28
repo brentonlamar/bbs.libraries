@@ -22,24 +22,26 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
+using System;
 using System.Collections.Specialized;
 using System.Net.Mail;
+using BBS.Libraries.Contracts;
 
 namespace BBS.Libraries.Emails
 {
     public class MailMessage //: IMailMessage
     {
-        public EmailAddress From { get; set; }
+        public IEmailAddress From { get; set; }
 
-        public EmailAddress Sender { get; set; }
+        public IEmailAddress Sender { get; set; }
 
-        public EmailAddressCollection ReplyToList { get; set; }
+        public IEmailAddressCollection ReplyToList { get; set; }
 
-        public EmailAddressCollection To { get; set; }
+        public IEmailAddressCollection To { get; set; }
 
-        public EmailAddressCollection CC { get; set; }
+        public IEmailAddressCollection CC { get; set; }
 
-        public EmailAddressCollection Bcc { get; set; }
+        public IEmailAddressCollection Bcc { get; set; }
 
         public MailPriority Priority { get; set; }
 
@@ -59,7 +61,7 @@ namespace BBS.Libraries.Emails
 
         public bool IsBodyHtml { get; set; }
 
-        public MailMessageAttachmentCollection Attachments { get; set; }
+        public IMailMessageAttachmentCollection Attachments { get; set; }
         
         public MailMessageAlternateViewCollection AlternateViews { get; set; }
 
@@ -77,9 +79,17 @@ namespace BBS.Libraries.Emails
         {
             var result = new System.Net.Mail.MailMessage();
             
-            if (this.From != null && result.From == null)
+            if (this.From != null)
             {
                 result.From = new MailAddress(this.From.Value);
+            }
+            else if (result.From != null)
+            {
+                result.From = new MailAddress(result.From.Address);
+            }
+            else
+            {
+                throw new ArgumentException("You must either specify 'From' or set your 'system.net > mailSettings > smtp from' app key");
             }
             
 

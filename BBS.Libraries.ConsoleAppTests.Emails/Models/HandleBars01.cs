@@ -23,6 +23,7 @@
 //-----------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 
 namespace BBS.Libraries.ConsoleAppTests.Emails.Models
 {
@@ -30,5 +31,9 @@ namespace BBS.Libraries.ConsoleAppTests.Emails.Models
     {
         public string FirstName { get; set; }
         public DateTime DateTime => DateTime.UtcNow;
+
+        public bool ShowStuff { get; set; }
+
+        public List<string> Names { get; set; }
     }
 }

@@ -22,6 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
+using BBS.Libraries.Contracts;
 using BBS.Libraries.Emails;
 
 namespace BBS.Libraries.Templating.Handlebars

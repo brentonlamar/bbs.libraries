@@ -24,6 +24,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using BBS.Libraries.Contracts;
 using BBS.Libraries.Emails;
 using BBS.Libraries.Templating.Handlebars;
 using BBS.Libraries.Templating.Razor;
@@ -68,7 +69,8 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
             {
                 ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection(TestData.ToEmailAddresses.First()),
                 FromEmailAddress = new EmailAddress(TestData.FromEmailAddresses.First()),
-                FirstName = TestData.FirstName
+                FirstName = TestData.FirstName,
+                Names = new List<string>() { "Brenton", "Ben" }
             };
 
             var handleBarsEngine = new HandlebarsContentEmailGenerator<Models.HandleBars01>(

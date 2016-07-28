@@ -39,7 +39,6 @@
     <Compile Include="EmailAddressCollection.cs" />
     <Compile Include="EmailBaseModel.cs" />
     <Compile Include="EmailGenerator.cs" />
-    <Compile Include="IEmailBaseModel.cs" />
     <Compile Include="MailMessage.cs" />
     <Compile Include="MailMessageAlternateView.cs" />
     <Compile Include="MailMessageAlternateViewCollection.cs" />
