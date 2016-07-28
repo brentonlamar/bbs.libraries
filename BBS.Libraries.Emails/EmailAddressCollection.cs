@@ -23,18 +23,24 @@
 //-----------------------------------------------------------------------
 
 using System.Collections.Generic;
+using BBS.Libraries.Contracts;
 
 namespace BBS.Libraries.Emails
 {
-    public class EmailAddressCollection : List<EmailAddress>
+    public class EmailAddressCollection :  List<IEmailAddress>, IEmailAddressCollection
     {
+        private List<IEmailAddress> emailAddresses { get; set; }
+
         public EmailAddressCollection()
         {
-
+            emailAddresses = new List<IEmailAddress>();
         }
 
-        public EmailAddressCollection(string emailAddress) : this(new string[] { emailAddress })
+        public EmailAddressCollection(string emailAddress)
         {
+            emailAddresses = new List<IEmailAddress>();
+
+            this.Add(new EmailAddress(emailAddress));
         }
 
         public EmailAddressCollection(IEnumerable<string> emailAddresses)

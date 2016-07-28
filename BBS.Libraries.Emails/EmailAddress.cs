@@ -23,10 +23,11 @@
 //-----------------------------------------------------------------------
 
 using System.Text.RegularExpressions;
+using BBS.Libraries.Contracts;
 
 namespace BBS.Libraries.Emails
 {
-    public class EmailAddress
+    public class EmailAddress : IEmailAddress
     {
         private Regex emailRegex = new Regex(@"^(?<mailbox>[a-zA-Z0-9_\-\.\+]+)@(?<domain>((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3}))(\]?)$");
 

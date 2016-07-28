@@ -24,10 +24,11 @@
 
 using System.IO;
 using System.Net.Mail;
+using BBS.Libraries.Contracts;
 
 namespace BBS.Libraries.Emails
 {
-    public class MailMessageAttachment
+    public class MailMessageAttachment : IMailMessageAttachment
     {
         private Attachment _attachment;
 
